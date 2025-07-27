@@ -1,96 +1,155 @@
-/* Global Styles */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Reset & Base */
+* {
   margin: 0;
   padding: 0;
-  background: #eef2f5;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
   color: #333;
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #007acc, #005f99);
+  background: linear-gradient(135deg, #007acc, #004e92);
   color: white;
-  padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2.5em;
-  letter-spacing: 1px;
+  font-size: 2.8em;
+  margin-bottom: 10px;
 }
 
-/* Navigation */
+header p {
+  font-size: 1.2em;
+  color: #d3eaff;
+}
+
 nav {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 nav a {
+  color: #ffffff;
   margin: 0 15px;
-  color: #e0f7ff;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
+  position: relative;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #ffffff;
-  border-bottom: 2px solid #fff;
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: white;
+  width: 0;
+  transition: width 0.3s ease;
+  margin: auto;
 }
 
-/* Section Styling */
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Sections */
 section {
-  padding: 50px 20px;
+  padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
+section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #007acc;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: #00557a;
+}
+
 /* Project Cards */
 .project {
-  background: #ffffff;
-  padding: 30px;
+  background: white;
+  padding: 25px;
   margin-bottom: 30px;
-  border-radius: 10px;
   border-left: 6px solid #007acc;
+  border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-.project h2 {
-  margin-top: 0;
-  color: #005f99;
+.project h3 {
+  margin-bottom: 10px;
+  color: #00557a;
 }
 
 .project p {
-  margin-bottom: 0;
+  margin-bottom: 15px;
+}
+
+.project a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project a:hover {
+  color: #004466;
+}
+
+/* About & Contact */
+#about p,
+#contact p {
+  margin-bottom: 15px;
+  font-size: 1.05em;
+}
+
+#contact a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
+  background: #004466;
+  color: #eee;
   text-align: center;
-  padding: 30px 20px;
-  background: #111;
-  color: #aaa;
+  padding: 20px;
   font-size: 0.9em;
+  margin-top: 40px;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2em;
   }
 
   nav a {
-    display: inline-block;
-    margin: 10px 5px;
+    display: block;
+    margin: 10px 0;
+  }
+
+  section {
+    padding: 40px 15px;
   }
 
   .project {
